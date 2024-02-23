@@ -2847,6 +2847,14 @@ int brcmnand_probe(struct udevice *dev, struct brcmnand_soc *soc)
 	/* Read the write-protect configuration in the device tree */
 	wp_on = dev_read_u32_default(dev, "write-protect", wp_on);
 
+	/* Check if the board connects the WP pin */
+#ifndef __UBOOT__
+	if (of_property_read_bool(dn, "brcm,wp-not-connected"))
+#else
+	if (dev_read_bool(ctrl->dev, "brcm,wp-not-connected"))
+#endif /* __UBOOT__ */
+		wp_on = 0;
+
 	if (ctrl->features & BRCMNAND_HAS_WP) {
 		/* Permanently disable write protection */
 		if (wp_on == 2)

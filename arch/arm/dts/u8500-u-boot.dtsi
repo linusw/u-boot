@@ -1,0 +1,20 @@
+// SPDX-License-Identifier: GPL-2.0-or-later
+
+/ {
+	/* FIXME: Remove this when the U8500 clock driver is implemented */
+	sdmmcclk: sdmmcclk {
+		compatible = "fixed-clock";
+		#clock-cells = <0>;
+		clock-frequency = <100000000>;
+	};
+
+	soc {
+		mtu@a03c6000 {
+			clock-frequency = <133000000>;
+		};
+
+		mmc@80126000 {
+			clocks = <&sdmmcclk>;
+		};
+	};
+};

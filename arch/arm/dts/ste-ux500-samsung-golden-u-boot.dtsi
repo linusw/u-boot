@@ -1,0 +1,11 @@
+// SPDX-License-Identifier: GPL-2.0-or-later
+
+#include "u8500-u-boot.dtsi"
+
+&panel_reg_1v8 {
+	regulator-name = "panel-fixed-supply-1v8";
+};
+
+&panel_reg_3v0 {
+	regulator-name = "panel-fixed-supply-3v0";
+};

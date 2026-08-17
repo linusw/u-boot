@@ -36,7 +36,9 @@
 	"fastboot_partition_alias_userdata=DATAFS\0"
 
 #define BOOTCMD_ENV \
-	"fastbootcmd=echo '*** FASTBOOT MODE ***'; fastboot usb 0\0"
+	"fastbootcmd=echo '*** FASTBOOT MODE ***'; fastboot usb 0\0" \
+	"button_cmd_0_name=VOL-\0" \
+	"button_cmd_0=run fastbootcmd\0"
 
 #define CFG_EXTRA_ENV_SETTINGS \
 	BOOT_ENV \

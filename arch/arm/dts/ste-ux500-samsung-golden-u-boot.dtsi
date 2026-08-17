@@ -9,3 +9,7 @@
 &panel_reg_3v0 {
 	regulator-name = "panel-fixed-supply-3v0";
 };
+
+&{/gpio-keys/volume-down} {
+	label = "VOL-";
+};

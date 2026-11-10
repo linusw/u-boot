@@ -12,6 +12,8 @@
 #include <asm/setup.h>
 #include <asm/system.h>
 
+#include "stemmy-efs.h"
+
 DECLARE_GLOBAL_DATA_PTR;
 
 /* Parse atags provided by Samsung bootloader to get available memory */
@@ -544,6 +546,8 @@ int ft_board_setup(void *fdt, struct bd_info *bd)
 		}
 		skomer_kyle_patch_display(fdt);
 	}
+
+	stemmy_efs_fixup(fdt);
 
 	return 0;
 }

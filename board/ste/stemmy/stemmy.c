@@ -70,6 +70,7 @@ int board_fit_config_name_match(const char *name)
 	const char *dt_name;
 
 	switch (fw_mach) {
+	case 3294:
 	case 5000:
 		dt_name = "ste-ux500-samsung-janice";
 		break;
@@ -77,6 +78,7 @@ int board_fit_config_name_match(const char *name)
 	case 5002:
 		dt_name = "ste-ux500-samsung-gavini";
 		break;
+	case 3297:
 	case 5003:
 		switch (fw_board_id_get()) {
 		case 0x101:
